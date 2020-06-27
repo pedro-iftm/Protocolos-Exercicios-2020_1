@@ -1,0 +1,70 @@
+.card {
+  box-shadow: 1px 1px 15px #343434;
+  transition: 0.1s;
+  border-radius: 5px;
+  padding: 50px;
+  padding-top: 15px;
+  background-color: white;
+  overflow-y: scroll;
+  min-height: 80%;
+  min-width: 40%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border-spacing: 0px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+th {
+  background-color: rgb(116, 54, 241);
+}
+
+td {
+  width: 40%;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(54, 107, 253);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color:white;
+}
+
+th:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+th:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+td:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+td:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+hr {
+  border-top: 1px solid rgba(100, 148, 237, 0.226);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
