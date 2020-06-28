@@ -7,12 +7,13 @@ from view import add_contact, list_contacts, index
 def handle_add_contacts_request():
     if request.GET.button:
         name = request.GET.name
-        age = request.GET.age
-        contact = request.GET.contact
+        id = request.GET.id
+        email = request.GET.email
+        phone = request.GET.phone
 
-        if name or age or contact:
-            if name and age and contact:
-                write_file(f'{name};{age};{contact}')
+        if name or id or email or phone:
+            if name and id and email and phone:
+                write_file(f'{name};{id};{email};{phone}')
             else:
                 return add_contact('Preencha todos os dados')
 

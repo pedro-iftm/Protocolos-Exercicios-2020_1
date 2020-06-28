@@ -39,6 +39,8 @@ input[type=submit] {
   font-weight: bolder;
   width: 70px;
   height: 30px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px gray;
 }
 
 button {
@@ -49,6 +51,7 @@ button {
   font-weight: bolder;
   width: 70px;
   height: 30px;
+  box-shadow: 1px 1px 5px gray;
 }
 
 a {

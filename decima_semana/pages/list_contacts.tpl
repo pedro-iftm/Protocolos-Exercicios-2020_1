@@ -18,7 +18,8 @@
     <table>
       <tr>
         <th>NOME</th>
-        <th>IDADE</th>
+        <th>CPF</th>
+        <th>EMAIL</th>
         <th>TELEFONE</th>
       </tr>
       % if rows:
