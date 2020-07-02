@@ -1,0 +1,68 @@
+body {
+  background: rgb(29,29,223);
+  background: linear-gradient(12deg, rgba(29,29,223,1) 1%, rgba(27,27,200,1) 4%, rgba(108,28,134,1) 95%);
+}
+
+.card {
+  box-shadow: 1px 1px 15px #343434;
+  transition: 0.1s;
+  border-radius: 5px;
+  background-color: white;
+  /* min-height: 25%; */
+}
+  
+.center-card {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.center-card input {
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 10px;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  background-color: rgb(54, 107, 253);
+  border: none;
+  color: white;
+  font-weight: bolder;
+  width: 70px;
+  height: 30px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px gray;
+}
+
+button {
+  border-radius: 5px;
+  background-color: rgb(54, 107, 253);
+  border: none;
+  color: white;
+  font-weight: bolder;
+  width: 70px;
+  height: 30px;
+  box-shadow: 1px 1px 5px gray;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+hr {
+  border-top: 1px solid rgba(100, 148, 237, 0.226);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
