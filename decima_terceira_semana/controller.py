@@ -56,6 +56,22 @@ def handle_search_contact_request():
         return list_contacts(contacts)
 
 
+def handle_sort_contacts_request():
+    if request.GET.sort_name_button:
+        pass
+
+    elif request.GET.sort_id_button:
+        pass
+
+    elif request.GET.sort_email_button:
+        pass
+
+    elif request.GET.sort_phone_button:
+        pass
+
+    return redirect('/list-contacts')
+
+
 def __get_form_data():
     form_data = {'name': request.GET.name,
                  'id': request.GET.id,

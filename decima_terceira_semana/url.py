@@ -6,7 +6,8 @@ from controller import (handle_add_contact_request,
                         handle_delete_contact_request,
                         handle_edit_contact_request,
                         handle_list_contacts_request,
-                        handle_search_contact_request)
+                        handle_search_contacts_request,
+                        handle_sort_contacts_request)
 from view import index as index_view
 
 app = Bottle()
@@ -33,13 +34,18 @@ def list_contacts():
 
 
 @app.route('/search-contacts', method='GET')
-def search_contact():
-    return handle_search_contact_request()
+def search_contacts():
+    return handle_search_contacts_request()
+
+
+@app.route('/sort-contacts', method='GET')
+def sort_contacts():
+    return handle_sort_contacts_request()
 
 
 @app.route('/<filename:path>')
 def static_files(filename):
-    return static_file(filename, root='static/')
+    return static_file(filename, root='pages/assets/')
 
 
 @app.route('/')

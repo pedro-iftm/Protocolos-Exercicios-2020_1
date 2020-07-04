@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form action="/edit-contact" method="GET" class="card center-card">
+  <form action="/edit-contact" method="GET" onsubmit="return validateForm(this)" class="card center-card">
     <div class="container">
       <button>
         <a href="/">VOLTAR</a>
