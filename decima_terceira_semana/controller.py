@@ -1,13 +1,16 @@
 import re
 
-from bottle import redirect, request
-
+from bottle import Bottle, static_file, request, redirect
 from contact import Contact
 from view import add_contact, edit_contact, list_contacts
 from view import index as index_view
 
 
-def handle_add_contact_request():
+app = Bottle()
+
+
+@app.route('/add-contact', method='GET')
+def handle_add_contact():
     if request.GET.save_button:
         form_data = __get_form_data()
         Contact().add(**form_data)
@@ -17,7 +20,8 @@ def handle_add_contact_request():
     return add_contact()
 
 
-def handle_edit_contact_request():
+@app.route('/edit-contact', method='GET')
+def handle_edit_contact():
     id = request.query.get('id')
 
     if request.GET.save_button:
@@ -28,27 +32,29 @@ def handle_edit_contact_request():
         return redirect('/list-contacts')
 
     contact = Contact().get(id)[0]
-    formated_id = re.sub(r'[.-]*', '', contact[1])
     initial_data = {'name': contact[0],
-                    'id': formated_id,
+                    'id': contact[1],
                     'email': contact[2],
                     'phone': contact[3]}
 
     return edit_contact(**initial_data)
 
 
-def handle_list_contacts_request():
-    contacts = Contact().all()
-    return list_contacts(contacts)
-
-
-def handle_delete_contact_request():
+@app.route('/delete-contact', method='GET')
+def handle_delete_contact():
     id = request.query.get('id')
     Contact().delete(id)
     return redirect('/list-contacts')
 
 
-def handle_search_contact_request():
+@app.route('/list-contacts', method='GET')
+def handle_list_contacts():
+    contacts = Contact().all()
+    return list_contacts(contacts)
+
+
+@app.route('/search-contacts', method='GET')
+def handle_search_contacts():
     if request.GET.search_button:
         search = request.GET.search
         contacts = Contact().get(search)
@@ -56,20 +62,24 @@ def handle_search_contact_request():
         return list_contacts(contacts)
 
 
-def handle_sort_contacts_request():
-    if request.GET.sort_name_button:
-        pass
+@app.route('/sort-contacts', method='GET')
+def handle_sort_contacts():
+    selected_sort = list(request.GET.values())
 
-    elif request.GET.sort_id_button:
-        pass
+    if selected_sort:
+        contacts = Contact().all(sort=selected_sort[0])
+        return list_contacts(contacts)
 
-    elif request.GET.sort_email_button:
-        pass
 
-    elif request.GET.sort_phone_button:
-        pass
+@app.route('/<filename:path>')
+def static_files(filename):
+    return static_file(filename, root='pages/assets/')
 
-    return redirect('/list-contacts')
+
+@app.route('/')
+def index():
+    contacts = Contact().all()
+    return list_contacts(contacts)
 
 
 def __get_form_data():

@@ -12,8 +12,14 @@ class Contact:
     def delete(self, id):
         self.__remove_row_from_file(id)
 
-    def all(self, filter=None):
-        return read_file()
+    def all(self, sort=None):
+        file = read_file()
+
+        if sort:
+            model = ['NOME', 'CPF', 'EMAIL', 'TELEFONE']
+            file = sorted(file, key=(lambda item: item[model.index(sort)]))
+
+        return file
 
     def get(self, value):
         file = read_file()

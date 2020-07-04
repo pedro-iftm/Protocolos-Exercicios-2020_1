@@ -11,7 +11,7 @@
 <body>
   <div class="card center-card">
     <button>
-      <a href="/">VOLTAR</a>
+      <a href="/add-contact">NOVO</a>
     </button>
     <form action="/search-contacts" method="GET">
       <input type="text" placeholder="Pesquisar" name="search">
@@ -21,10 +21,10 @@
     <form action="/sort-contacts" method="GET">
       <table>
         <tr>
-          <th><input class="header" type="submit" name="sort_name_button" value="NOME"></th>
-          <th><input class="header" type="submit" name="sort_id_button" value="CPF"></th>
-          <th><input class="header" type="submit" name="sort_email_button" value="EMAIL"></th>
-          <th><input class="header" type="submit" name="sort_phone_button" value="TELEFONE"></th>
+          <th><input class="header" type="submit" name="sort_name" value="NOME"></th>
+          <th><input class="header" type="submit" name="sort_id" value="CPF"></th>
+          <th><input class="header" type="submit" name="sort_email" value="EMAIL"></th>
+          <th><input class="header" type="submit" name="sort_phone" value="TELEFONE"></th>
           <th></th>
           <th></th>
         </tr>

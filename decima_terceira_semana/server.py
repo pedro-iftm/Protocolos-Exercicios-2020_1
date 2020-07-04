@@ -1,8 +1,8 @@
 from bottle import Bottle
 
-from url import app as urls
+from controller import app as contacts
 
 
 app = Bottle()
-app.merge(urls)
+app.merge(contacts)
 app.run(host='0.0.0.0')
