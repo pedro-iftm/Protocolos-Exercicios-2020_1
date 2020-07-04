@@ -20,7 +20,7 @@
       <input type="text" placeholder="CPF" name="id" value="{{ id }}" readonly>
       <input type="text" placeholder="Email" name="email" value="{{ email }}">
       <input type="text" placeholder="Telefone" name="phone" value="{{ phone }}" maxlength="15" onkeypress="phoneMask(this)">
-      <input type="submit" name="button" value="GRAVAR">
+      <input type="submit" name="save_button" value="GRAVAR">
     </div>
   </form>
 </body>

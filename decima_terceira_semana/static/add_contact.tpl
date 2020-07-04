@@ -20,7 +20,7 @@
         <input type="text" placeholder="CPF" name="id" maxlength="14" onkeypress="idMask(this)">
         <input type="email" placeholder="Email" name="email">
         <input type="text" placeholder="Telefone" name="phone" maxlength="15" onkeypress="phoneMask(this)">
-        <input type="submit" name="button" value="GRAVAR">
+        <input type="submit" name="save_button" value="GRAVAR">
         <p id="message"></p>
       </div>
   </form>

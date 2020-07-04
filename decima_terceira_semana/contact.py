@@ -17,7 +17,7 @@ class Contact:
 
     def get(self, value):
         file = read_file()
-        file = [row for row in file if value in row]
+        file = [row for row in file if value in str(row)]
         return file
 
     def __remove_row_from_file(self, value):

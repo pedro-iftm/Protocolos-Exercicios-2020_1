@@ -8,7 +8,7 @@ from view import index as index_view
 
 
 def handle_add_contact_request():
-    if request.GET.button:
+    if request.GET.save_button:
         form_data = __get_form_data()
         Contact().add(**form_data)
 
@@ -20,7 +20,7 @@ def handle_add_contact_request():
 def handle_edit_contact_request():
     id = request.query.get('id')
 
-    if request.GET.button:
+    if request.GET.save_button:
         form_data = __get_form_data()
         form_data['id'] = id
         Contact().edit(**form_data)
@@ -46,6 +46,14 @@ def handle_delete_contact_request():
     id = request.query.get('id')
     Contact().delete(id)
     return redirect('/list-contacts')
+
+
+def handle_search_contact_request():
+    if request.GET.search_button:
+        search = request.GET.search
+        contacts = Contact().get(search)
+
+        return list_contacts(contacts)
 
 
 def __get_form_data():

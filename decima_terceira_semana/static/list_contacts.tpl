@@ -13,6 +13,10 @@
     <button>
       <a href="/">VOLTAR</a>
     </button>
+    <form action="/search-contacts" method="GET">
+      <input type="text" placeholder="Pesquisar" name="search">
+      <input type="submit" name="search_button" value="PESQUISAR">
+    </form>
     <hr>
     <table>
       <tr>

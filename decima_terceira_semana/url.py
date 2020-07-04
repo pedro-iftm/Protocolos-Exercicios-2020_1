@@ -1,11 +1,13 @@
 import re
 
 from bottle import Bottle, static_file
-
 from contact import Contact
-from controller import handle_list_contacts_request, handle_add_contact_request, handle_edit_contact_request, handle_delete_contact_request
+from controller import (handle_add_contact_request,
+                        handle_delete_contact_request,
+                        handle_edit_contact_request,
+                        handle_list_contacts_request,
+                        handle_search_contact_request)
 from view import index as index_view
-
 
 app = Bottle()
 
@@ -28,6 +30,11 @@ def delete_contact():
 @app.route('/list-contacts', method='GET')
 def list_contacts():
     return handle_list_contacts_request()
+
+
+@app.route('/search-contacts', method='GET')
+def search_contact():
+    return handle_search_contact_request()
 
 
 @app.route('/<filename:path>')
